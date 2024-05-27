@@ -1,0 +1,16 @@
+<!-- main/templates/main/symptoms.html -->
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Additional Information Required</h1>
+<p>Predicted skin condition: <strong>{{ predicted_class }}</strong></p>
+<p>Prediction confidence: <strong>{{ score }}%</strong></p>
+<img src="{{ MEDIA_URL }}{{ image_url }}" width="200" height="200">
+
+<form method="post" action="{% url 'predict_diagnosis' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="symptom_submit">Submit Symptoms</button>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!-- main/templates/main/diagnosis_result.html -->
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Diagnosis Result</h1>
+
+{% if predicted_class == "Measles" %}
+    <p>Predicted skin condition: <strong>{{ predicted_class }}</strong></p>
+    <p>Prediction confidence: <strong>{{ score }}%</strong></p>
+    <h2>Additional Information</h2>
+    <p>Incubation period: <strong>{{ additional_info.incubation }}</strong> days</p>
+    <p>Sore Throat: <strong>{{ additional_info.sorethroat }}</strong></p>
+    <p>Temperature: <strong>{{ additional_info.temperature }}°C</strong></p>
+    <p>Predicted Diagnosis: <strong>{{ additional_info.predicted_measles }}</strong></p>
+{% else %}
+    <p>The skin is out of scope in the study. Thank you.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+/* main/static/main/style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+.logo {
+    height: 50px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
